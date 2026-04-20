@@ -1,4 +1,4 @@
-🤖 Vision-Arm-Tracker: Vision-Based Somatosensory Robotic Arm Control System
+#🤖 Vision-Arm-Tracker: Vision-Based Somatosensory Robotic Arm Control System
 
 ![alt text](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
 
@@ -17,21 +17,21 @@ This project is a spatial somatosensory robotic arm control system based on the 
 
 Tip: Upload a GIF named demo.gif to your repository and replace this line with ![Demo](demo.gif).
 
-✨ Features
+#✨ Features
 
-🖐️ Spatial Multi-Target Tracking: Features an independent tracker.py module equipped with a spatial distance memory algorithm. It firmly locks onto the initial target hand in multi-person/multi-hand scenarios, completely preventing the robotic arm from sudden jumping or jittering.
+#🖐️ Spatial Multi-Target Tracking: Features an independent tracker.py module equipped with a spatial distance memory algorithm. It firmly locks onto the initial target hand in multi-person/multi-hand scenarios, completely preventing the robotic arm from sudden jumping or jittering.
 
-📐 3D Inverse Kinematics (IK) Solver: Combines depth-map deprojection to accurately map the 3D spatial coordinates (X, Y, Z) of the palm to precise rotation angles for the 4 axes of the robotic arm.
+#📐 3D Inverse Kinematics (IK) Solver: Combines depth-map deprojection to accurately map the 3D spatial coordinates (X, Y, Z) of the palm to precise rotation angles for the 4 axes of the robotic arm.
 
 🛡️ Dual Anti-Jitter & Smooth Filtering: Integrates an amplitude limiter and Exponential Moving Average (EMA) filtering to eliminate minor hand tremors, ensuring silky-smooth robotic movements.
 
-⚡ Non-Blocking Asynchronous Communication: The low-level hardware driver utilizes independent threading and command queues (Queue), eliminating serial communication lag and achieving ultra-low latency.
+#⚡ Non-Blocking Asynchronous Communication: The low-level hardware driver utilizes independent threading and command queues (Queue), eliminating serial communication lag and achieving ultra-low latency.
 
-🌌 Sci-Fi Holographic UI: Renders a real-time high-tech skeletal tracking system and a cyber-radar lock-on UI using OpenCV.
+#🌌 Sci-Fi Holographic UI: Renders a real-time high-tech skeletal tracking system and a cyber-radar lock-on UI using OpenCV.
 
-🌐 Digital Twin Ready: Streams real-time pose data to the local network via UDP protocol, allowing seamless integration with 3D engines like Unity.
+#🌐 Digital Twin Ready: Streams real-time pose data to the local network via UDP protocol, allowing seamless integration with 3D engines like Unity.
 
-🛠️ Hardware & Software Requirements
+#🛠️ Hardware & Software Requirements
 1. Hardware
 
 Depth Camera: Intel RealSense series (D435 / D435i recommended, requires a USB 3.0 port).
@@ -49,20 +49,20 @@ Bash
 download
 content_copy
 expand_less
-# 1. Install core computer vision and math libraries
+ 1. Install core computer vision and math libraries
 pip install opencv-python mediapipe numpy
 
-# 2. Install official RealSense SDK
+ 2. Install official RealSense SDK
 pip install pyrealsense2
 
-# 3. Install serial communication library (⚠️ WARNING: Do NOT install the library named "serial"!)
+ 3. Install serial communication library (⚠️ WARNING: Do NOT install the library named "serial"!)
 pip install pyserial
 
-⚠️ Common Pitfall Guide:
+#⚠️ Common Pitfall Guide:
 If you encounter the error module 'serial' has no attribute 'Serial', it means you accidentally installed the wrong serial library.
 Fix: Run pip uninstall serial -y, and then run pip install pyserial.
 
-🚀 Quick Start
+#🚀 Quick Start
 Step 1: Clone the Repository
 code
 Bash
@@ -95,7 +95,7 @@ python main.py
 
 Note: The MediaPipe hand-tracking model (a few MBs) will be automatically downloaded on the first run. Please ensure you have an internet connection.
 
-📂 Project Structure
+#📂 Project Structure
 
 The project adopts a highly cohesive and loosely coupled modular design for easy secondary development:
 
@@ -110,7 +110,7 @@ expand_less
 ├── kinematics.py    # Math brain: Handles 3D Inverse Kinematics (IK) calculation and anti-jitter filtering.
 ├── hardware.py      # Hardware driver: Manages PWM protocol packing and asynchronous serial communication.
 └── visualizer.py    # UI renderer: Draws Sci-Fi holographic skeletons and target radars via OpenCV.
-🎮 Control Logic
+#🎮 Control Logic
 
 Movement Tracking: Aim your palm at the camera and move it in 3D space (Up/Down, Left/Right, Forward/Backward). The robotic claw will follow the absolute 3D coordinates of your palm.
 
@@ -120,7 +120,7 @@ Pinch Fingers: The robotic claw closes. UI shows SYS: LOCKED.
 
 Open Fingers: The robotic claw opens. UI shows SYS: TRACKING.
 
-🔧 Tuning Guide
+#🔧Tuning Guide
 
 If the robotic arm's movement does not meet your expectations, you can easily fine-tune it in config.py:
 
@@ -132,11 +132,11 @@ Axis direction reversed? Flip the sign of DIR_BASE, DIR_UPPER, etc. (1 to -1).
 
 Want to connect to Unity? Listen to UDP_IP and UDP_PORT configured in config.py within your Unity C# script, and parse the incoming string by splitting it with commas ,.
 
-🤝 Contribution & Feedback
+#🤝 Contribution & Feedback
 
 Pull Requests and Issues are highly welcome!
 If you find this project helpful, please give it a ⭐️ Star! It means a lot to me.
 
-📄 License
+#📄 License
 
 This project is licensed under the MIT License.
