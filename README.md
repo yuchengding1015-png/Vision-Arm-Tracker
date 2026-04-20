@@ -96,6 +96,7 @@ The project adopts a highly cohesive and loosely coupled modular design for easy
 - **Grabbing / Pinching**: The program calculates the spatial distance between your **thumb and index fingertip** in real-time.
   - **Pinch Fingers**: The robotic claw closes. UI shows `SYS: LOCKED`.
   - **Open Fingers**: The robotic claw opens. UI shows `SYS: TRACKING`.
+![Uploading image.png…]()
 
 ---
 
